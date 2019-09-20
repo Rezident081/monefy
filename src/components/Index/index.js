@@ -1,4 +1,4 @@
 import Home from './Home.js';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
-export default inject('store')(Home);
+export default inject('store')(observer(Home));

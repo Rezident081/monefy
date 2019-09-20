@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import {inject, observer} from 'mobx-react';
 import routerMap from './routerMap';
 import {
   BrowserRouter as Router,
@@ -7,11 +8,15 @@ import {
   Switch,
 } from "react-router-dom";
 import './assets/scss/index.scss';
+import cn from 'classnames';
+
 
 function App(props) {
 
+  const {store} = props;
+
   return (
-    <div className="App">
+    <div className={cn({nightMode : store.nightMode}, 'App')}>
       <Router>
         <Switch>
           { 
@@ -29,4 +34,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default inject('store')(observer(App));

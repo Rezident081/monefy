@@ -1,3 +1,5 @@
+@import './vars';
+
 html,
 body {
   // background: green;
@@ -7,22 +9,44 @@ body {
 body {
   margin: 0;
   padding: 0;
+
+}
+
+main{
+  background: lighten($white, 10%);
+  transition: .2s all;
 }
 
 .chart-container {
   width: 100%;
-  height: 35rem;
+  height: 31.1rem;
+}
+
+header{
+  .header-container{
+    height: 4rem;
+    background: $white;
+    padding: 0 15px;
+    transition: .2s all;
+  }
+
+  .header-inner{
+    display:flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  p{
+    color: $darken-grey;
+    margin: -5px 10px 0;
+  }
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-
   .footer-container {
-    background: #3d413f;
+    background: $white;
+    transition: .2s all;
   }
 
   .balance-block {
@@ -31,8 +55,8 @@ footer {
       max-width: 300px;
       margin: 0 auto;
       text-align: center;
-      color: #fff;
-      background: #79c695;
+      color: $white;
+      background: $green;
       padding: .6rem;
       border-radius: 3px;
       cursor: pointer;
@@ -54,18 +78,43 @@ footer {
       box-shadow: none;
       font-size: 2rem;
       outline: none;
-      background: #585858;
+      background: $white;
       cursor: pointer;
 
       &.plus {
-        color: #79c695;
-        border: 5px solid #79c695;
+        color: $green;
+        border: 5px solid $green;
       }
 
       &.minus {
-        color: #f28588;
-        border: 5px solid #f28588;
+        color: $red;
+        border: 5px solid $red;
       }
     }
   }
 }
+
+.App.nightMode{
+  header{
+    .header-container{
+      background: $darken-grey;
+    }
+    p{
+      color: $white;
+    }
+  }
+
+  footer{
+    .footer-container{
+      background: $darken-grey;
+    }
+
+    button {
+      background: $grey;
+    }
+  }
+
+  main{
+    background: lighten($darken-grey, 10%);
+  }
+} 
