@@ -11,7 +11,8 @@ class Home extends Component {
   }
 
   render() {
-    const { categories, balance } = this.props.store;
+    const { categories } = this.props.store;
+    const { history } = this.props;
 
     return (
       <Fragment>
@@ -19,7 +20,7 @@ class Home extends Component {
         <main>
           <Charts data={categories} />
         </main>
-        <Footer balance={balance} />
+        <Footer history={history}  />
       </Fragment>
     )
   }

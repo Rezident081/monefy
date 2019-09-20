@@ -2,13 +2,13 @@ const categories = [
   {
     id: 0,
     name : 'Salary',
-    value : 10,
+    value : 1111,
     type : 'plus'
   },
   {
     id: 1,
     name : 'Health',
-    value : 10,
+    value : 200,
     type : 'minus'
   },
   {

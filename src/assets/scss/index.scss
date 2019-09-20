@@ -49,8 +49,42 @@ footer {
     transition: .2s all;
   }
 
+  .footer-container-inner{
+    position: relative;
+    min-height: 4.2rem;
+  }
+
   .balance-block {
-    padding: 15px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25px 0 5px;
+    background: $white;
+    transition: .2s all;
+    &.isOpen{
+      height: 34rem;
+    }
+
+    .categories-list{
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0 25px;
+      max-height: 30rem;
+      overflow-y: scroll;
+      ul{
+        list-style: none;
+        padding: 0;
+        li{
+          display: flex;
+          justify-content: space-between;
+          margin: 15px 0;
+          color: $darken-grey;
+        }
+      }
+    }
+
     .balance-inner {
       max-width: 300px;
       margin: 0 auto;
@@ -109,6 +143,16 @@ footer {
       background: $darken-grey;
     }
 
+    .balance-block {
+      background: $darken-grey;
+      
+      .categories-list{
+        ul li{
+          color: $white;
+        }
+      }
+    }
+
     button {
       background: $grey;
     }
@@ -118,3 +162,22 @@ footer {
     background: lighten($darken-grey, 10%);
   }
 } 
+
+.switch-wrapper {
+  position: relative;
+}
+ 
+.switch-wrapper > div {
+  position: absolute;
+  right:0;
+  left:0;
+  margin: auto;
+}
+
+.green{
+  color : $green;
+}
+
+.red{
+  color : $red;
+}
